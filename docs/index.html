@@ -1,0 +1,1588 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@repetere/react-toastify</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@repetere/react-toastify</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>@repetere/react-toastify</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#react-toastify" id="react-toastify" style="color: inherit; text-decoration: none;">
+					<h1>React-Toastify</h1>
+				</a>
+				<p><a href="https://opencollective.com/react-toastify"><img src="https://opencollective.com/react-toastify/all/badge.svg?label=financial+contributors" alt="Financial Contributors on Open Collective"></a> <img src="https://img.shields.io/travis/fkhadra/react-toastify.svg?label=%F0%9F%9A%A7Build&style=for-the-badge" alt="Travis (.org)">
+					<img src="https://img.shields.io/npm/dm/react-toastify.svg?label=%E2%8F%ACdownloads&style=for-the-badge" alt="npm">
+					<img src="https://img.shields.io/npm/v/react-toastify.svg?style=for-the-badge" alt="npm">
+					<img src="https://img.shields.io/npm/l/react-toastify.svg?label=%F0%9F%93%9Clicense&style=for-the-badge" alt="NPM">
+					<img src="https://img.shields.io/coveralls/github/fkhadra/react-toastify.svg?label=%E2%9B%B1coverage&style=for-the-badge" alt="Coveralls github">
+				<img src="https://user-images.githubusercontent.com/5574267/35336500-e58f35b6-0118-11e8-800b-2da6594fc700.gif" alt="React toastify" title="React toastify"></p>
+				<p>🎉 React-Toastify allow you to add notification to your app with ease. No more nonsense!</p>
+				<ul>
+					<li><a href="#demo">Demo</a></li>
+					<li><a href="#installation">Installation</a></li>
+					<li><a href="#features">Features</a></li>
+					<li><a href="#usage">Usage</a><ul>
+							<li><a href="#one-component-to-rule-them-all">One component to rule them all</a><ul>
+									<li><a href="#one-toastcontainer-to-render-them">One ToastContainer to render them</a></li>
+									<li><a href="#what-if-i-told-you-that-the-toastcontainer-is-optional">What if I told you that the ToastContainer is optional</a></li>
+									<li><a href="#multi-container-support">Multi container support</a></li>
+								</ul>
+							</li>
+							<li><a href="#positioning-toast">Positioning toast</a></li>
+							<li><a href="#set-autoclose-delay-or-disable-it">Set autoclose delay or disable it</a></li>
+							<li><a href="#render-a-component">Render a component</a></li>
+							<li><a href="#remove-a-toast-programmatically">Remove a toast programmatically</a></li>
+							<li><a href="#usage-with-redux">Usage with redux</a></li>
+							<li><a href="#pause-toast-timer-when-the-window-loses-focus">Pause toast timer when the window loses focus</a></li>
+							<li><a href="#use-a-custom-id">Use a custom id</a></li>
+							<li><a href="#prevent-duplicate">Prevent duplicate</a></li>
+							<li><a href="#delay-notification-appearance">Delay notification appearance</a></li>
+							<li><a href="#use-a-controlled-progress-bar">Use a controlled progress bar</a></li>
+							<li><a href="#update-a-toast">Update a toast</a><ul>
+									<li><a href="#basic-example">Basic example</a></li>
+									<li><a href="#update-the-content">Update the content</a></li>
+									<li><a href="#update-the-toast-id">Update the toast id</a></li>
+									<li><a href="#apply-a-transition">Apply a transition</a></li>
+									<li><a href="#reset-option-or-inherit-from-toastcontainer">Reset option or inherit from ToastContainer</a></li>
+								</ul>
+							</li>
+							<li><a href="#define-callback">Define callback</a></li>
+							<li><a href="#listen-for-change">Listen for change</a></li>
+							<li><a href="#set-a-custom-close-button-or-simply-remove-it">Set a custom close button or simply remove it</a><ul>
+									<li><a href="#override-the-default-one">Override the default one</a></li>
+									<li><a href="#define-it-per-toast">Define it per toast</a></li>
+									<li><a href="#remove-it">Remove it</a></li>
+								</ul>
+							</li>
+							<li><a href="#add-an-undo-option-to-a-toast-like-google-drive">Add an undo option to a toast like google drive</a></li>
+							<li><a href="#replace-the-default-transition">Replace the default transition</a></li>
+							<li><a href="#define-a-custom-enter-and-exit-transition">Define a custom enter and exit transition</a><ul>
+									<li><a href="#ease-your-life-with-the-csstransition-helper">Ease your life with the cssTransition helper</a><ul>
+											<li><a href="#different-duration-for-enter-and-exit">Different duration for enter and exit</a></li>
+											<li><a href="#handle-transition-based-on-the-toast-position">Handle transition based on the toast position</a></li>
+										</ul>
+									</li>
+									<li><a href="#create-a-transition-from-scratch">Create a transition from scratch</a></li>
+								</ul>
+							</li>
+							<li><a href="#swipe-to-remove">Swipe to remove</a><ul>
+									<li><a href="#define-the-width-percentage-to-remove-the-toast">Define the width percentage to remove the toast</a></li>
+									<li><a href="#disable-it">Disable it</a></li>
+								</ul>
+							</li>
+							<li><a href="#le-style">Le style</a><ul>
+									<li><a href="#style-with-css-classes">style with css classes</a></li>
+									<li><a href="#style-with-glamor">style with glamor</a></li>
+									<li><a href="#define-style-globally">Define style globally</a></li>
+									<li><a href="#right-to-left-support">Right to left support</a></li>
+								</ul>
+							</li>
+							<li><a href="#mobile">Mobile</a></li>
+						</ul>
+					</li>
+					<li><a href="#api">Api</a><ul>
+							<li><a href="#toastcontainer">ToastContainer</a></li>
+							<li><a href="#toast">toast</a></li>
+							<li><a href="#csstransition">cssTransition</a></li>
+						</ul>
+					</li>
+					<li><a href="#browser-support">Browser Support</a></li>
+					<li><a href="#release-notes">Release Notes</a></li>
+					<li><a href="#contribute">Contribute</a></li>
+					<li><a href="#license">License</a></li>
+				</ul>
+				<a href="#demo" id="demo" style="color: inherit; text-decoration: none;">
+					<h2>Demo</h2>
+				</a>
+				<p><a href="https://fkhadra.github.io/react-toastify/">A demo is worth a thousand words</a></p>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
+				<pre><code>$ npm <span class="hljs-keyword">install</span> <span class="hljs-comment">--save react-toastify</span>
+$ yarn <span class="hljs-keyword">add</span> react-toastify</code></pre><blockquote>
+					<p>RC.5 <code>useLazyContainer has been removed. The lazy container is opt-in</code></p>
+				</blockquote>
+				<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+					<h2>Features</h2>
+				</a>
+				<ul>
+					<li>Easy to setup for real, you can make it work in less than 10sec!</li>
+					<li>Super easy to customize</li>
+					<li>RTL support</li>
+					<li>Swipe to close 👌</li>
+					<li>Can display a react component inside the toast!</li>
+					<li>Has <code>onOpen</code> and <code>onClose</code> hooks. Both can access the props passed to the react component rendered inside the toast</li>
+					<li>Can remove a toast programmatically</li>
+					<li>Define behavior per toast</li>
+					<li>Pause toast when window loses focus 👁</li>
+					<li>Fancy progress bar to display the remaining time</li>
+					<li>Possibility to update a toast</li>
+					<li>You can control the progress bar a la nprogress 😲</li>
+					<li>Starting v5 the <code>ToastContainer</code> is optional if you want to 😎</li>
+				</ul>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<a href="#one-component-to-rule-them-all" id="one-component-to-rule-them-all" style="color: inherit; text-decoration: none;">
+					<h3>One component to rule them all</h3>
+				</a>
+				<a href="#one-toastcontainer-to-render-them" id="one-toastcontainer-to-render-them" style="color: inherit; text-decoration: none;">
+					<h4>One ToastContainer to render them</h4>
+				</a>
+				<p>The toasts inherit ToastContainer&#39;s props. <strong>Props defined on toast supersede ToastContainer&#39;s props.</strong></p>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+  <span class="hljs-keyword">import</span> { ToastContainer, toast } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+  <span class="hljs-keyword">import</span> <span class="hljs-string">'react-toastify/dist/ReactToastify.css'</span>;
+  <span class="hljs-comment">// minified version is also included</span>
+  <span class="hljs-comment">// import 'react-toastify/dist/ReactToastify.min.css';</span>
+
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    notify = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> toast(<span class="hljs-string">"Wow so easy !"</span>);
+
+    render(){
+      <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notify}</span>&gt;</span>Notify !<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ToastContainer</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+      );
+    }
+  }</code></pre>
+				<p>Remember to render the <code>ToastContainer</code> <em>once</em> in your application tree.
+				If you can&#39;t figure out where to put it, rendering it in the application root would be the best bet.</p>
+				<a href="#what-if-i-told-you-that-the-toastcontainer-is-optional" id="what-if-i-told-you-that-the-toastcontainer-is-optional" style="color: inherit; text-decoration: none;">
+					<h4>What if I told you that the ToastContainer is optional</h4>
+				</a>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+  <span class="hljs-keyword">import</span> { toast } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+  <span class="hljs-keyword">import</span> <span class="hljs-string">'react-toastify/dist/ReactToastify.css'</span>;
+
+  <span class="hljs-comment">// Call it once in your app. At the root of your app is the best place</span>
+  toast.configure()
+
+  <span class="hljs-keyword">const</span> App = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> notify = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> toast(<span class="hljs-string">"Wow so easy !"</span>);
+
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{notify}</span>&gt;</span>Notify !<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>;
+  }</code></pre>
+				<p>The library will mount a <code>ToastContainer</code> for you if none is mounted. </p>
+				<a href="#configure-the-toastcontainer-when-it-is-mounted-on-demand" id="configure-the-toastcontainer-when-it-is-mounted-on-demand" style="color: inherit; text-decoration: none;">
+					<h4>Configure the ToastContainer when it is mounted on demand</h4>
+				</a>
+				<p>The configure function accept the same props as the ToastContainer. As soon as the container is
+				rendered call to configure will have no effect.</p>
+				<pre><code class="language-js">toast.configure({
+  <span class="hljs-attr">autoClose</span>: <span class="hljs-number">8000</span>,
+  <span class="hljs-attr">draggable</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-comment">//etc you get the idea</span>
+});</code></pre>
+				<a href="#multi-container-support" id="multi-container-support" style="color: inherit; text-decoration: none;">
+					<h4>Multi container support</h4>
+				</a>
+				<p>To enable multiple container support, you have to pass <code>enableMultiContainer</code> and specify a <code>containerId</code> and use it in
+				each toast, to do so add <code>containerId</code> to the toast&#39;s options object.</p>
+				<p>Note: adding <code>enableMultiContainer</code> prop to the <code>&lt;ToastContainer/ &gt;</code> will:</p>
+				<ul>
+					<li>Check each toast to verify if its <code>containerId</code> match the container <code>containerId</code> so it can be rendered.</li>
+					<li>Ensure not to render any <code>toast</code> that has <code>containerId</code>.</li>
+					<li>Render any toast if both the <code>toast</code> and <code>&lt;ToastContainer/ &gt;</code>  does not include <code>containerId</code> and <code>containerId</code> respectively.</li>
+				</ul>
+				<p>A simple example to demonstrate multi toast container capability.</p>
+				<ul>
+					<li>Notify A button will show a toast on the bottom left.</li>
+					<li>Notify B button will show a toast on the top right.</li>
+				</ul>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+  <span class="hljs-keyword">import</span> { ToastContainer, toast } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+  <span class="hljs-keyword">import</span> <span class="hljs-string">'react-toastify/dist/ReactToastify.css'</span>;
+
+
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    notifyA = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> toast(<span class="hljs-string">'Wow so easy !'</span>, {<span class="hljs-attr">containerId</span>: <span class="hljs-string">'A'</span>});
+    notifyB = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> toast(<span class="hljs-string">'Wow so easy !'</span>, {<span class="hljs-attr">containerId</span>: <span class="hljs-string">'B'</span>});
+
+    render(){
+      <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ToastContainer</span> <span class="hljs-attr">enableMultiContainer</span> <span class="hljs-attr">containerId</span>=<span class="hljs-string">{</span>'<span class="hljs-attr">A</span>'} <span class="hljs-attr">position</span>=<span class="hljs-string">{toast.POSITION.BOTTOM_LEFT}</span> /&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ToastContainer</span> <span class="hljs-attr">enableMultiContainer</span> <span class="hljs-attr">containerId</span>=<span class="hljs-string">{</span>'<span class="hljs-attr">B</span>'} <span class="hljs-attr">position</span>=<span class="hljs-string">{toast.POSITION.TOP_RIGHT}</span> /&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notifyA}</span>&gt;</span>Notify A !<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notifyB}</span>&gt;</span>Notify B !<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>          
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+      );
+    }
+  }
+</code></pre>
+				<a href="#positioning-toast" id="positioning-toast" style="color: inherit; text-decoration: none;">
+					<h3>Positioning toast</h3>
+				</a>
+				<p>By default, all the toasts will be positioned on the top right of your browser. If a position is set on a <code>toast</code>, the one defined on ToastContainer will be replaced.</p>
+				<p>The following values are allowed: <strong>top-right, top-center, top-left, bottom-right, bottom-center, bottom-left</strong></p>
+				<p>For convenience, <code>toast</code> expose a POSITION property to avoid any typo.</p>
+				<pre><code class="language-javascript"> <span class="hljs-comment">// toast.POSITION.TOP_LEFT, toast.POSITION.TOP_RIGHT, toast.POSITION.TOP_CENTER</span>
+ <span class="hljs-comment">// toast.POSITION.BOTTOM_LEFT,toast.POSITION.BOTTOM_RIGHT, toast.POSITION.BOTTOM_CENTER</span>
+
+  <span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+  <span class="hljs-keyword">import</span> { toast } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Position</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    notify = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      toast(<span class="hljs-string">"Default Notification !"</span>);
+
+      toast.success(<span class="hljs-string">"Success Notification !"</span>, {
+        <span class="hljs-attr">position</span>: toast.POSITION.TOP_CENTER
+      });
+
+      toast.error(<span class="hljs-string">"Error Notification !"</span>, {
+        <span class="hljs-attr">position</span>: toast.POSITION.TOP_LEFT
+      });
+
+      toast.warn(<span class="hljs-string">"Warning Notification !"</span>, {
+        <span class="hljs-attr">position</span>: toast.POSITION.BOTTOM_LEFT
+      });
+
+      toast.info(<span class="hljs-string">"Info Notification !"</span>, {
+        <span class="hljs-attr">position</span>: toast.POSITION.BOTTOM_CENTER
+      });
+
+      toast(<span class="hljs-string">"Custom Style Notification with css class!"</span>, {
+        <span class="hljs-attr">position</span>: toast.POSITION.BOTTOM_RIGHT,
+        <span class="hljs-attr">className</span>: <span class="hljs-string">'foo-bar'</span>
+      });
+    };
+
+    render(){
+      <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notify}</span>&gt;</span>Notify<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>;
+    }
+  }</code></pre>
+				<a href="#set-autoclose-delay-or-disable-it" id="set-autoclose-delay-or-disable-it" style="color: inherit; text-decoration: none;">
+					<h3>Set autoclose delay or disable it</h3>
+				</a>
+				<ul>
+					<li>Set the default delay</li>
+				</ul>
+				<pre><code class="language-js">  <span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+  <span class="hljs-keyword">import</span> { ToastContainer } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+
+  <span class="hljs-comment">// close toast after 8 seconds</span>
+  <span class="hljs-keyword">const</span> App = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ToastContainer</span> <span class="hljs-attr">autoClose</span>=<span class="hljs-string">{8000}</span> /&gt;</span></span>
+  );</code></pre>
+				<ul>
+					<li>Set the delay per toast for more control</li>
+				</ul>
+				<pre><code class="language-js">  <span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+  <span class="hljs-keyword">import</span> { ToastContainer, toast } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    closeAfter15 = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> toast(<span class="hljs-string">"YOLO"</span>, { <span class="hljs-attr">autoClose</span>: <span class="hljs-number">15000</span> });
+
+    closeAfter7 = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> toast(<span class="hljs-string">"7 Kingdoms"</span>, { <span class="hljs-attr">autoClose</span>: <span class="hljs-number">7000</span> });
+
+    render(){
+      <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.closeAfter15}</span>&gt;</span>Close after 15 seconds<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.closeAfter7}</span>&gt;</span>Close after 7 seconds<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ToastContainer</span> <span class="hljs-attr">autoClose</span>=<span class="hljs-string">{8000}</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+      );
+    }
+  }</code></pre>
+				<ul>
+					<li>Disable it by default</li>
+				</ul>
+				<pre><code class="language-js">    &lt;ToastContainer autoClose={<span class="hljs-literal">false</span>} /&gt;</code></pre>
+				<ul>
+					<li>Disable it per toast</li>
+				</ul>
+				<pre><code class="language-js">    toast(<span class="hljs-string">"hello"</span>, {
+      <span class="hljs-attr">autoClose</span>: <span class="hljs-literal">false</span>
+    })</code></pre>
+				<a href="#render-a-component" id="render-a-component" style="color: inherit; text-decoration: none;">
+					<h3>Render a component</h3>
+				</a>
+				<p>When you render a component, a <code>closeToast</code> function is passed as a props. That way you can close the toast on user interaction for example.</p>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { ToastContainer, toast } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-toastify"</span>;
+
+<span class="hljs-keyword">const</span> Msg = <span class="hljs-function">(<span class="hljs-params">{ closeToast }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    Lorem ipsum dolor
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Retry<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{closeToast}</span>&gt;</span>Close<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+)
+
+<span class="hljs-keyword">const</span> App = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> toast(<span class="hljs-tag">&lt;<span class="hljs-name">Msg</span> /&gt;</span>)}&gt;Hello 😀<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ToastContainer</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+);</code></pre>
+				<p>You can also render a component using a function. More or less like a &quot;render props&quot;:</p>
+				<pre><code class="language-js">toast(<span class="hljs-function">(<span class="hljs-params">{ closeToast }</span>) =&gt;</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Functional swag 😎<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>);</code></pre>
+				<a href="#remove-a-toast-programmatically" id="remove-a-toast-programmatically" style="color: inherit; text-decoration: none;">
+					<h3>Remove a toast programmatically</h3>
+				</a>
+				<p>An id is returned each time you display a toast, use it to remove a given toast programmatically by calling <code>toast.dismiss(id)</code></p>
+				<p>Without args, all the displayed toasts will be removed.</p>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+  <span class="hljs-keyword">import</span> { toast } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Example</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    toastId = <span class="hljs-literal">null</span>;
+
+    notify = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">this</span>.toastId = toast(<span class="hljs-string">"Lorem ipsum dolor"</span>);
+
+    dismiss = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span>  toast.dismiss(<span class="hljs-keyword">this</span>.toastId);
+
+    dismissAll = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span>  toast.dismiss();
+
+    render(){
+      <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notify}</span>&gt;</span>Notify<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.dismiss}</span>&gt;</span>Dismiss<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.dismissAll}</span>&gt;</span>Dismiss All<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+      );
+    }
+  }</code></pre>
+				<a href="#usage-with-redux" id="usage-with-redux" style="color: inherit; text-decoration: none;">
+					<h3>Usage with redux</h3>
+				</a>
+				<p>&quot;Talk is cheap. Show me the code&quot;</p>
+				<p><a href="https://codesandbox.io/s/2485wxy78j"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit react+redux+react-toastify"></a></p>
+				<a href="#pause-toast-timer-when-the-window-loses-focus" id="pause-toast-timer-when-the-window-loses-focus" style="color: inherit; text-decoration: none;">
+					<h3>Pause toast timer when the window loses focus</h3>
+				</a>
+				<p>The default behavior is to pause the toast timer whenever the window loses focus. You can opt-out by setting the <code>pauseOnFocusLoss</code> props to false:</p>
+				<pre><code class="language-js"><span class="hljs-comment">// Opt-out for all toast</span>
+&lt;ToastContainer pauseOnFocusLoss={<span class="hljs-literal">false</span>} /&gt;
+
+<span class="hljs-comment">// Opt-out per toast</span>
+toast(<span class="hljs-string">'Hello'</span>, {
+  <span class="hljs-attr">pauseOnFocusLoss</span>: <span class="hljs-literal">false</span>
+})</code></pre>
+				<a href="#use-a-custom-id" id="use-a-custom-id" style="color: inherit; text-decoration: none;">
+					<h3>Use a custom id</h3>
+				</a>
+				<p>A custom <code>toastId</code> can be used to replace the one generated. You can use a <code>number</code> or a <code>string</code>.</p>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+  <span class="hljs-keyword">import</span> { toast } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Example</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    notify = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      toast(<span class="hljs-string">"I cannot be duplicated !"</span>, {
+        <span class="hljs-attr">toastId</span>: <span class="hljs-number">13</span>
+      });
+    }
+
+    render(){
+      <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notify}</span>&gt;</span>Notify<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+      );
+    }
+  }</code></pre>
+				<a href="#prevent-duplicate" id="prevent-duplicate" style="color: inherit; text-decoration: none;">
+					<h3>Prevent duplicate</h3>
+				</a>
+				<p>To prevent duplicates, you can check if a given toast is active by calling <code>toast.isActive(id)</code> like the snippet below. Or, you can use a custom <code>toastId</code>:</p>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+  <span class="hljs-keyword">import</span> { toast } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Example</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    toastId = <span class="hljs-literal">null</span>;
+    customToastId = <span class="hljs-string">'xxx-yyy'</span>;
+
+    notify = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      <span class="hljs-keyword">if</span> (! toast.isActive(<span class="hljs-keyword">this</span>.toastId)) {
+        <span class="hljs-keyword">this</span>.toastId = toast(<span class="hljs-string">"I cannot be duplicated !"</span>);
+      }
+
+      toast(<span class="hljs-string">"xxx-yyy cannot be duplicated"</span>, {
+        <span class="hljs-attr">toastId</span>: customToastId
+      });
+    }
+
+    render(){
+      <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notify}</span>&gt;</span>Notify<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+      );
+    }
+  }</code></pre>
+				<a href="#delay-notification-appearance" id="delay-notification-appearance" style="color: inherit; text-decoration: none;">
+					<h3>Delay notification appearance</h3>
+				</a>
+				<p>You can delay the notification appearance as shown below. Under the hood the lib simply use <code>setTimeout</code>. </p>
+				<pre><code class="language-js">toast(<span class="hljs-string">'Show now'</span>);
+toast(<span class="hljs-string">'Show after 1sec'</span>, { <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span> })</code></pre>
+				<p><em>Note: <a href="#remove-a-toast-programmatically">toast.dismiss()</a> has no effect if called during the delay before a given toast appears.</em></p>
+				<a href="#use-a-controlled-progress-bar" id="use-a-controlled-progress-bar" style="color: inherit; text-decoration: none;">
+					<h3>Use a controlled progress bar</h3>
+				</a>
+				<p>Imagine you want to see the progress of a file upload. The example below feature axios, but it works with anything!</p>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+  <span class="hljs-keyword">import</span> { toast } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+  <span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">'axios'</span>;
+
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Example</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    upload = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      <span class="hljs-comment">// we need to keep a reference of the toastId to be able to update it</span>
+      <span class="hljs-keyword">let</span> toastId = <span class="hljs-literal">null</span>;
+
+      axios.request({
+        <span class="hljs-attr">method</span>: <span class="hljs-string">"post"</span>, 
+        <span class="hljs-attr">url</span>: <span class="hljs-string">"/foobar"</span>, 
+        <span class="hljs-attr">data</span>: myData, 
+        <span class="hljs-attr">onUploadProgress</span>: <span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> {
+          <span class="hljs-keyword">const</span> progress = p.loaded / p.total;
+
+          <span class="hljs-comment">// check if we already displayed a toast</span>
+          <span class="hljs-keyword">if</span>(toastId === <span class="hljs-literal">null</span>){
+              toastId = toast(<span class="hljs-string">'Upload in Progress'</span>, {
+              <span class="hljs-attr">progress</span>: progress
+            });
+          } <span class="hljs-keyword">else</span> {
+            toast.update(toastId, {
+              <span class="hljs-attr">progress</span>: progress
+            })
+          }
+        }
+      }).then (<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> {
+        <span class="hljs-comment">// Upload is done! </span>
+        <span class="hljs-comment">// The remaining progress bar will be filled up</span>
+        <span class="hljs-comment">// The toast will be closed when the transition end</span>
+        toast.done(toast.id)
+      })
+    }
+
+    render(){
+      <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.upload}</span>&gt;</span>Upload something<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+      );
+    }
+  }</code></pre>
+				<a href="#update-a-toast" id="update-a-toast" style="color: inherit; text-decoration: none;">
+					<h3>Update a toast</h3>
+				</a>
+				<p>When you update a toast, the toast options and the content are inherited but don&#39;t worry you can update them.</p>
+				<p><img src="https://user-images.githubusercontent.com/5574267/33761953-1ce2e0ea-dc0b-11e7-8967-a63c1185ce0e.gif" alt="update-without-transition"></p>
+				<a href="#basic-example" id="basic-example" style="color: inherit; text-decoration: none;">
+					<h4>Basic example</h4>
+				</a>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { toast } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Update</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  toastId = <span class="hljs-literal">null</span>;
+
+  notify = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">this</span>.toastId = toast(<span class="hljs-string">"Hello"</span>, { <span class="hljs-attr">autoClose</span>: <span class="hljs-literal">false</span> });
+
+  update = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> toast.update(<span class="hljs-keyword">this</span>.toastId, { <span class="hljs-attr">type</span>: toast.TYPE.INFO, <span class="hljs-attr">autoClose</span>: <span class="hljs-number">5000</span> });
+
+  render(){
+      <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notify}</span>&gt;</span>Notify<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.update}</span>&gt;</span>Update<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+      )
+  }
+}</code></pre>
+				<a href="#update-the-content" id="update-the-content" style="color: inherit; text-decoration: none;">
+					<h4>Update the content</h4>
+				</a>
+				<p>If you want to change the content it&#39;s straightforward as well. You can render any valid element including a react component. Pass your value to a <code>render</code> option as follow:</p>
+				<pre><code class="language-js"> <span class="hljs-comment">// With a string</span>
+ toast.update(<span class="hljs-keyword">this</span>.toastId, {
+    <span class="hljs-attr">render</span>: <span class="hljs-string">"New content"</span>,
+    <span class="hljs-attr">type</span>: toast.TYPE.INFO,
+    <span class="hljs-attr">autoClose</span>: <span class="hljs-number">5000</span>
+  });
+
+<span class="hljs-comment">// Or with a component</span>
+toast.update(<span class="hljs-keyword">this</span>.toastId, {
+    <span class="hljs-attr">render</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> /&gt;</span></span>
+    type: toast.TYPE.INFO,
+    <span class="hljs-attr">autoClose</span>: <span class="hljs-number">5000</span>
+  });</code></pre>
+				<a href="#update-the-toast-id" id="update-the-toast-id" style="color: inherit; text-decoration: none;">
+					<h4>Update the toast id</h4>
+				</a>
+				<p>If you want to update the <code>toastId</code> it can be done. But don&#39;t forget to use the new id!</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> myNewToastId = <span class="hljs-string">'loremIpsum'</span>;
+
+toast.update(<span class="hljs-keyword">this</span>.toastId, {
+  <span class="hljs-attr">render</span>: <span class="hljs-string">"New content"</span>,
+  <span class="hljs-attr">type</span>: toast.TYPE.INFO,
+  <span class="hljs-attr">autoClose</span>: <span class="hljs-number">5000</span>,
+  <span class="hljs-attr">toastId</span>: myNewToastId
+});
+
+toast.update(myNewToastId, {
+  <span class="hljs-attr">render</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> /&gt;</span></span>
+  autoClose: <span class="hljs-number">6000</span>
+}); </code></pre>
+				<a href="#apply-a-transition" id="apply-a-transition" style="color: inherit; text-decoration: none;">
+					<h4>Apply a transition</h4>
+				</a>
+				<p>By default, when you update a toast, there is no transition applied. If you want to apply a transition, it can be done via the <code>className</code> or the <code>transition</code> option:</p>
+				<p><img src="https://user-images.githubusercontent.com/5574267/33761952-1cc9d55a-dc0b-11e7-9a05-29186ea1c1f0.gif" alt="update-with-transition"></p>
+				<pre><code class="language-js"><span class="hljs-comment">// with css</span>
+toast.update(<span class="hljs-keyword">this</span>.toastId, {
+  <span class="hljs-attr">render</span>: <span class="hljs-string">"New Content"</span>,
+  <span class="hljs-attr">type</span>: toast.TYPE.INFO,
+  <span class="hljs-comment">//Here the magic</span>
+  <span class="hljs-attr">className</span>: <span class="hljs-string">'rotateY animated'</span>
+})
+
+<span class="hljs-comment">// with glamor</span>
+toast.update(<span class="hljs-keyword">this</span>.toastId, {
+  <span class="hljs-attr">render</span>: <span class="hljs-string">"New Content"</span>,
+  <span class="hljs-attr">type</span>: toast.TYPE.INFO,
+  <span class="hljs-comment">//Here the magic</span>
+  <span class="hljs-attr">className</span>: css({
+    <span class="hljs-attr">transform</span>: <span class="hljs-string">"rotateY(360deg)"</span>,
+    <span class="hljs-attr">transition</span>: <span class="hljs-string">"transform 0.6s"</span>
+  })
+})
+
+<span class="hljs-comment">// with transition</span>
+toast.update(<span class="hljs-keyword">this</span>.toastId, {
+  <span class="hljs-attr">render</span>: <span class="hljs-string">"New Content"</span>,
+  <span class="hljs-attr">type</span>: toast.TYPE.INFO,
+  <span class="hljs-comment">//Here the magic</span>
+  <span class="hljs-attr">transition</span>: Rotate
+})
+</code></pre>
+				<a href="#reset-option-or-inherit-from-toastcontainer" id="reset-option-or-inherit-from-toastcontainer" style="color: inherit; text-decoration: none;">
+					<h4>Reset option or inherit from ToastContainer</h4>
+				</a>
+				<p>If you want to inherit props from the <code>ToastContainer</code>, you can reset an option by passing null.
+				It&#39;s particulary useful when you remove the <code>closeButton</code> from a toast and you want it back during the update:</p>
+				<pre><code class="language-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Update</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  toastId = <span class="hljs-literal">null</span>;
+
+  notify = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">this</span>.toastId = toast(<span class="hljs-string">"Hello"</span>, {
+      <span class="hljs-attr">autoClose</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">closeButton</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// Remove the closeButton</span>
+    });
+
+  update = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> toast.update(<span class="hljs-keyword">this</span>.toastId, {
+      <span class="hljs-attr">type</span>: toast.TYPE.INFO,
+      <span class="hljs-attr">autoClose</span>: <span class="hljs-number">5000</span>,
+      <span class="hljs-attr">closeButton</span>: <span class="hljs-literal">null</span> <span class="hljs-comment">// The closeButton defined on ToastContainer will be used</span>
+    });
+
+  render(){
+      <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notify}</span>&gt;</span>Notify<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.update}</span>&gt;</span>Update<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+      )
+  }
+}</code></pre>
+				<a href="#define-callback" id="define-callback" style="color: inherit; text-decoration: none;">
+					<h3>Define callback</h3>
+				</a>
+				<p>You can define two callbacks on <code>toast</code>. They are really useful when the toast are not used only to display messages.</p>
+				<ul>
+					<li>onOpen is called inside componentDidMount</li>
+					<li>onClose is called inside componentWillUnmount</li>
+				</ul>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+  <span class="hljs-keyword">import</span> { toast } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Hook</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    notify = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> toast(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> <span class="hljs-attr">foo</span>=<span class="hljs-string">"bar"</span> /&gt;</span></span>, {
+      <span class="hljs-attr">onOpen</span>: <span class="hljs-function">(<span class="hljs-params">{ foo }</span>) =&gt;</span> <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">'I counted to infinity once then..'</span>),
+      <span class="hljs-attr">onClose</span>: <span class="hljs-function">(<span class="hljs-params">{ foo }</span>) =&gt;</span> <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">'I counted to infinity twice'</span>)
+    });
+
+    render(){
+      <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notify}</span>&gt;</span>Notify<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>;
+    }
+  }</code></pre>
+				<a href="#listen-for-change" id="listen-for-change" style="color: inherit; text-decoration: none;">
+					<h3>Listen for change</h3>
+				</a>
+				<p>If you want to know when a toast is displayed or removed, <code>toast</code> expose a <code>onChange</code> method:</p>
+				<pre><code class="language-js">toast.onChange( <span class="hljs-function">(<span class="hljs-params">numberOfToastDisplayed, containerId</span>) =&gt;</span> {
+  <span class="hljs-comment">// Do whatever you want</span>
+  <span class="hljs-comment">// The containerId is usefull when working with multiple containers</span>
+});</code></pre>
+				<a href="#set-a-custom-close-button-or-simply-remove-it" id="set-a-custom-close-button-or-simply-remove-it" style="color: inherit; text-decoration: none;">
+					<h3>Set a custom close button or simply remove it</h3>
+				</a>
+				<a href="#override-the-default-one" id="override-the-default-one" style="color: inherit; text-decoration: none;">
+					<h4>Override the default one</h4>
+				</a>
+				<p>You can pass a custom close button to the <code>ToastContainer</code> to replace the default one.</p>
+				<p>⚠️ <strong>When you use a custom close button, your button will receive a <code>closeToast</code> function.
+				You need to call it in order to close the toast.</strong> ⚠️</p>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+  <span class="hljs-keyword">import</span> { toast, ToastContainer } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+
+  <span class="hljs-keyword">const</span> CloseButton = <span class="hljs-function">(<span class="hljs-params">{ YouCanPassAnyProps, closeToast }</span>) =&gt;</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">i</span>
+      <span class="hljs-attr">className</span>=<span class="hljs-string">"material-icons"</span>
+      <span class="hljs-attr">onClick</span>=<span class="hljs-string">{closeToast}</span>
+    &gt;</span>
+    delete
+    <span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span></span>
+  );
+
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CustomClose</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    notify = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      toast(<span class="hljs-string">"The close button change when Chuck Norris display a toast"</span>);
+    };
+
+    render(){
+      <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notify}</span>&gt;</span>Notify<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>;
+          <span class="hljs-tag">&lt;<span class="hljs-name">ToastContainer</span> <span class="hljs-attr">closeButton</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">CloseButton</span> <span class="hljs-attr">YouCanPassAnyProps</span>=<span class="hljs-string">"foo"</span> /&gt;</span>} /&gt;
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+      );
+    }
+  }</code></pre>
+				<a href="#define-it-per-toast" id="define-it-per-toast" style="color: inherit; text-decoration: none;">
+					<h4>Define it per toast</h4>
+				</a>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+  <span class="hljs-keyword">import</span> { toast } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+
+  <span class="hljs-comment">// Let's use the closeButton we defined on the previous example</span>
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CustomClose</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    notify = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      toast(<span class="hljs-string">"The close button change when Chuck Norris display a toast"</span>,{
+        <span class="hljs-attr">closeButton</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">CloseButton</span> <span class="hljs-attr">YouCanPassAnyProps</span>=<span class="hljs-string">"foo"</span> /&gt;</span></span>
+      });
+    };
+
+    render(){
+      <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notify}</span>&gt;</span>Notify<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>;
+    }
+  }</code></pre>
+				<a href="#remove-it" id="remove-it" style="color: inherit; text-decoration: none;">
+					<h4>Remove it</h4>
+				</a>
+				<p>Sometimes you don&#39;t want to display a close button. It can be removed globally or per toast. Pass
+				<code>false</code> to <code>closeButton</code> props:</p>
+				<ul>
+					<li>remove it by default</li>
+				</ul>
+				<pre><code class="language-js">    &lt;ToastContainer closeButton={<span class="hljs-literal">false</span>} /&gt;</code></pre>
+				<ul>
+					<li>remove it per toast</li>
+				</ul>
+				<pre><code class="language-js">    toast(<span class="hljs-string">"hello"</span>, {
+      <span class="hljs-attr">closeButton</span>: <span class="hljs-literal">false</span>
+    })</code></pre>
+				<p>-- if you removed it globally, you can display the default Button per toast (or you can set your custom button)</p>
+				<pre><code class="language-js">    toast(<span class="hljs-string">"hello"</span>, {
+      <span class="hljs-attr">closeButton</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">// or &lt;FontAwesomeCloseButton /&gt;</span>
+    })</code></pre>
+				<a href="#add-an-undo-option-to-a-toast-like-google-drive" id="add-an-undo-option-to-a-toast-like-google-drive" style="color: inherit; text-decoration: none;">
+					<h3>Add an undo option to a toast like google drive</h3>
+				</a>
+				<p>See it in action:</p>
+				<p><a href="https://codesandbox.io/s/l2qkywz7xl"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit l2qkywz7xl"></a></p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> ToastUndo = <span class="hljs-function">(<span class="hljs-params">{ id, undo, closeToast }</span>) =&gt;</span> {
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleClick</span>(<span class="hljs-params"></span>)</span>{
+    undo(id);
+    closeToast();
+  }
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
+        Row Deleted <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{handleClick}</span>&gt;</span>UNDO<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  state = {
+    <span class="hljs-attr">collection</span>: data,
+    <span class="hljs-comment">// Buffer</span>
+    <span class="hljs-attr">toRemove</span>: []
+  };
+
+  <span class="hljs-comment">// Remove the row id from the buffer</span>
+  undo = <span class="hljs-function"><span class="hljs-params">id</span> =&gt;</span> {
+    <span class="hljs-keyword">this</span>.setState({
+      <span class="hljs-attr">toRemove</span>: <span class="hljs-keyword">this</span>.state.toRemove.filter(<span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> v !== id)
+    });
+  }
+
+  <span class="hljs-comment">// Remove definetly</span>
+  cleanCollection = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">this</span>.setState({
+    <span class="hljs-comment">// Return element which are not included in toRemove</span>
+    <span class="hljs-attr">collection</span>: <span class="hljs-keyword">this</span>.state.collection.filter(<span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> !<span class="hljs-keyword">this</span>.state.toRemove.includes(v.id)),
+    <span class="hljs-comment">//Cleanup the buffer</span>
+    <span class="hljs-attr">toRemove</span>: []
+  });
+
+   <span class="hljs-comment">// Remove row from render process</span>
+   <span class="hljs-comment">// then display the toast with undo action available</span>
+  removeRow = <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> id = e.target.dataset.rowId;
+    <span class="hljs-keyword">this</span>.setState({
+      <span class="hljs-attr">toRemove</span>: [...this.state.toRemove, id]
+    });
+    toast(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ToastUndo</span> <span class="hljs-attr">undo</span>=<span class="hljs-string">{this.undo}</span> <span class="hljs-attr">id</span>=<span class="hljs-string">{id}</span> /&gt;</span></span>, {
+      <span class="hljs-comment">// hook will be called whent the component unmount</span>
+      <span class="hljs-attr">onClose</span>: <span class="hljs-keyword">this</span>.cleanCollection
+    });
+  };
+
+  renderRows() {
+    <span class="hljs-keyword">const</span> { collection, toRemove } = <span class="hljs-keyword">this</span>.state;
+
+    <span class="hljs-comment">// Render all the element wich are not present in toRemove</span>
+    <span class="hljs-comment">// Im using data-attribute to grab the row id</span>
+    <span class="hljs-keyword">return</span> collection.filter(<span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> !toRemove.includes(v.id)).map(<span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{v.id}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{v.firstName}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{v.lastName}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{v.email}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.removeRow}</span> <span class="hljs-attr">data-row-id</span>=<span class="hljs-string">{v.id}</span>&gt;</span>
+            Delete
+          <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span></span>
+    ));
+  }
+
+  render() {
+    <span class="hljs-comment">// Dont close the toast on click</span>
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{styles}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>firstname<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>gender<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span> /&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+          {this.renderRows()}
+          <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ToastContainer</span> <span class="hljs-attr">closeOnClick</span>=<span class="hljs-string">{false}</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    );
+  }
+}</code></pre>
+				<a href="#replace-the-default-transition" id="replace-the-default-transition" style="color: inherit; text-decoration: none;">
+					<h3>Replace the default transition</h3>
+				</a>
+				<p>There is 4 built-in transitions provided:</p>
+				<details>
+					<summary>Bounce</summary>
+					<img src ="https://user-images.githubusercontent.com/5574267/38770379-985f49c8-4012-11e8-9db1-5d4d1f26a3d5.gif" />
+				</details>
+				<details>
+					<summary>Slide</summary>
+					<img src ="https://user-images.githubusercontent.com/5574267/38770381-98a81d24-4012-11e8-8011-1190f3fb17c3.gif" />
+				</details>
+				<details>
+					<summary>Zoom</summary>
+					<img src ="https://user-images.githubusercontent.com/5574267/38770382-98c16342-4012-11e8-9abf-3cf3d3eabd8c.gif" />
+				</details>
+				<details>
+					<summary>Flip</summary>
+					<img src ="https://user-images.githubusercontent.com/5574267/38770380-9877dde4-4012-11e8-9485-0dc43346ce30.gif" />
+				</details>
+				<p>Bounce is used by default but you can replace it by your own transition or by one of the list above:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> { Slide, Zoom, Flip, Bounce } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ToastContainer</span>
+    <span class="hljs-attr">transition</span>=<span class="hljs-string">{Slide}</span>
+  /&gt;</span></span>
+<span class="hljs-comment">//...</span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ToastContainer</span>
+    <span class="hljs-attr">transition</span>=<span class="hljs-string">{YourCustomTransition}</span>
+  /&gt;</span></span>
+</code></pre>
+				<p>You get the idea...</p>
+				<a href="#define-a-custom-enter-and-exit-transition" id="define-a-custom-enter-and-exit-transition" style="color: inherit; text-decoration: none;">
+					<h3>Define a custom enter and exit transition</h3>
+				</a>
+				<p>The toast relies on <code>react-transition-group</code> for the enter and exit transition. Any transition built with react-transition-group should work !</p>
+				<p><img src="https://user-images.githubusercontent.com/5574267/31049179-0d52e14c-a62e-11e7-9abd-b0d169a0fadc.gif" alt="toastify_custom_trans"></p>
+				<p>I&#39;ll use the zoom animation from animate.css. Of course, you could create your own animation.</p>
+				<pre><code class="language-css"><span class="hljs-comment">/* style.css*/</span>
+<span class="hljs-keyword">@keyframes</span> zoomIn {
+  <span class="hljs-selector-tag">from</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale3d</span>(.<span class="hljs-number">3</span>, .<span class="hljs-number">3</span>, .<span class="hljs-number">3</span>);
+  }
+
+  50% {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+  }
+}
+
+<span class="hljs-selector-class">.zoomIn</span> {
+  <span class="hljs-attribute">animation-name</span>: zoomIn;
+}
+
+<span class="hljs-keyword">@keyframes</span> zoomOut {
+  <span class="hljs-selector-tag">from</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+  }
+
+  50% {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale3d</span>(.<span class="hljs-number">3</span>, .<span class="hljs-number">3</span>, .<span class="hljs-number">3</span>);
+  }
+
+  <span class="hljs-selector-tag">to</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+  }
+}
+
+<span class="hljs-selector-class">.zoomOut</span> {
+  <span class="hljs-attribute">animation-name</span>: zoomOut;
+}
+
+<span class="hljs-comment">/* Not needed with the cssTransition helper */</span>
+
+<span class="hljs-selector-class">.animate</span> {
+  <span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">800ms</span>;
+}</code></pre>
+				<a href="#ease-your-life-with-the-csstransition-helper" id="ease-your-life-with-the-csstransition-helper" style="color: inherit; text-decoration: none;">
+					<h4>Ease your life with the cssTransition helper</h4>
+				</a>
+				<p>The easiest way to roll your own transition is by using the <code>cssTransition</code> helper. Doing so you don&#39;t need to deal with <code>react-transition-group</code>. You only need to provide the <code>enter</code> and the <code>exit</code> class name, the transition <code>duration</code> is set
+				to <code>750ms</code> by default but it can be overridden:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { toast, cssTransition } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'./style.css'</span>;
+
+<span class="hljs-keyword">const</span> Zoom = cssTransition({
+  <span class="hljs-attr">enter</span>: <span class="hljs-string">'zoomIn'</span>,
+  <span class="hljs-attr">exit</span>: <span class="hljs-string">'zoomOut'</span>,
+  <span class="hljs-comment">// default to 750ms, can be omitted</span>
+  <span class="hljs-attr">duration</span>: <span class="hljs-number">750</span>,
+});
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  notify = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    toast(<span class="hljs-string">"ZoomIn and ZoomOut"</span>, {
+      <span class="hljs-attr">transition</span>: Zoom,
+      <span class="hljs-attr">autoClose</span>: <span class="hljs-number">5000</span>
+    });
+  };
+
+  render(){
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notify}</span>&gt;</span>Notify<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>;
+  }
+}</code></pre>
+				<a href="#different-duration-for-enter-and-exit" id="different-duration-for-enter-and-exit" style="color: inherit; text-decoration: none;">
+					<h5>Different duration for enter and exit</h5>
+				</a>
+				<p>If you want the transition duration to be different between the enter and exit transition pass an array:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { toast, cssTransition } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'./style.css'</span>;
+
+<span class="hljs-keyword">const</span> Zoom = cssTransition({
+  <span class="hljs-attr">enter</span>: <span class="hljs-string">'zoomIn'</span>,
+  <span class="hljs-attr">exit</span>: <span class="hljs-string">'zoomOut'</span>,
+  <span class="hljs-attr">duration</span>: [<span class="hljs-number">500</span>, <span class="hljs-number">800</span>]
+});
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  notify = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    toast(<span class="hljs-string">"ZoomIn and ZoomOut"</span>, {
+      <span class="hljs-attr">transition</span>: Zoom,
+      <span class="hljs-attr">autoClose</span>: <span class="hljs-number">5000</span>
+    });
+  };
+
+  render(){
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notify}</span>&gt;</span>Notify<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>;
+  }
+}</code></pre>
+				<a href="#handle-transition-based-on-the-toast-position" id="handle-transition-based-on-the-toast-position" style="color: inherit; text-decoration: none;">
+					<h5>Handle transition based on the toast position</h5>
+				</a>
+				<p>Some transitions are based on the toast position. This is the case for the default one. If you pass <code>appendPosition</code> to the <code>cssTransition</code> helper as shown below, the current position will be appended to the <code>enter</code> and <code>exit</code> class name:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { toast, cssTransition } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'./style.css'</span>;
+
+<span class="hljs-keyword">const</span> Zoom = cssTransition({
+  <span class="hljs-comment">// zoomIn will become zoomIn--top-right or zoomIn--top-left and so on</span>
+  <span class="hljs-attr">enter</span>: <span class="hljs-string">'zoomIn'</span>,
+  <span class="hljs-comment">// zoomIn will become zoomOut--top-right or zoomOut--top-left and so on</span>
+  <span class="hljs-attr">exit</span>: <span class="hljs-string">'zoomOut'</span>,
+  <span class="hljs-comment">// default to false</span>
+  <span class="hljs-attr">appendPosition</span>: <span class="hljs-literal">true</span>
+});
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  notify = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    toast(<span class="hljs-string">"ZoomIn and ZoomOut"</span>, {
+      <span class="hljs-attr">transition</span>: Zoom,
+      <span class="hljs-attr">autoClose</span>: <span class="hljs-number">5000</span>
+    });
+  };
+
+  render(){
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notify}</span>&gt;</span>Notify<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>;
+  }
+}</code></pre>
+				<a href="#create-a-transition-from-scratch" id="create-a-transition-from-scratch" style="color: inherit; text-decoration: none;">
+					<h4>Create a transition from scratch</h4>
+				</a>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { toast } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+<span class="hljs-keyword">import</span> Transition <span class="hljs-keyword">from</span> <span class="hljs-string">'react-transition-group/Transition'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'./style.css'</span>;
+
+<span class="hljs-keyword">const</span> ZoomInAndOut = <span class="hljs-function">(<span class="hljs-params">{ children, position, ...props }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Transition</span>
+    {<span class="hljs-attr">...props</span>}
+    {/* <span class="hljs-attr">Same</span> <span class="hljs-attr">as</span> <span class="hljs-attr">the</span> <span class="hljs-attr">animation</span> <span class="hljs-attr">duration</span> */}
+    <span class="hljs-attr">timeout</span>=<span class="hljs-string">{800}</span>
+    <span class="hljs-attr">onEnter</span>=<span class="hljs-string">{</span> <span class="hljs-attr">node</span> =&gt;</span> node.classList.add('zoomIn', 'animate')}
+    onExit={node =&gt; {
+      node.classList.remove('zoomIn', 'animate');
+      node.classList.add('zoomOut', 'animate');
+    }}
+  &gt;
+    {children}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Transition</span>&gt;</span></span>
+);
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  notify = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    toast(<span class="hljs-string">"ZoomIn and ZoomOut"</span>, {
+      <span class="hljs-attr">transition</span>: ZoomInAndOut,
+      <span class="hljs-attr">autoClose</span>: <span class="hljs-number">5000</span>
+    });
+  };
+
+  render(){
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.notify}</span>&gt;</span>Notify<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>;
+  }
+}
+</code></pre>
+				<a href="#swipe-to-remove" id="swipe-to-remove" style="color: inherit; text-decoration: none;">
+					<h3>Swipe to remove</h3>
+				</a>
+				<p>You can swipe the toast to remove it:</p>
+				<p><img src="https://user-images.githubusercontent.com/5574267/38770523-9438ff7c-4014-11e8-93a5-acd7dbdae52b.gif" alt="drag"></p>
+				<a href="#define-the-width-percentage-to-remove-the-toast" id="define-the-width-percentage-to-remove-the-toast" style="color: inherit; text-decoration: none;">
+					<h4>Define the width percentage to remove the toast</h4>
+				</a>
+				<p>You need to drag 80% of the toast width to remove it. This can be changed to fit your need:</p>
+				<ul>
+					<li>Replace the default one:</li>
+				</ul>
+				<pre><code class="language-js">&lt;ToastContainer draggablePercent={<span class="hljs-number">60</span>}&gt;</code></pre>
+				<ul>
+					<li>Replace per toast:</li>
+				</ul>
+				<pre><code class="language-js">toast(<span class="hljs-string">'Hello'</span>, {
+  <span class="hljs-attr">draggablePercent</span>: <span class="hljs-number">60</span>
+});</code></pre>
+				<a href="#disable-it" id="disable-it" style="color: inherit; text-decoration: none;">
+					<h4>Disable it</h4>
+				</a>
+				<ul>
+					<li>Disable by default for all toast:</li>
+				</ul>
+				<pre><code class="language-js">&lt;ToastContainer draggable={<span class="hljs-literal">false</span>}&gt;</code></pre>
+				<ul>
+					<li>Disable per toast:</li>
+				</ul>
+				<pre><code class="language-js">toast(<span class="hljs-string">'Hello'</span>, {
+  <span class="hljs-attr">draggable</span>: <span class="hljs-literal">false</span>
+});</code></pre>
+				<a href="#le-style" id="le-style" style="color: inherit; text-decoration: none;">
+					<h3>Le style</h3>
+				</a>
+				<a href="#style-with-css-classes" id="style-with-css-classes" style="color: inherit; text-decoration: none;">
+					<h4>style with css classes</h4>
+				</a>
+				<pre><code class="language-javascript">toast(<span class="hljs-string">"Custom style"</span>,{
+  <span class="hljs-attr">className</span>: <span class="hljs-string">'black-background'</span>,
+  <span class="hljs-attr">bodyClassName</span>: <span class="hljs-string">"grow-font-size"</span>,
+  <span class="hljs-attr">progressClassName</span>: <span class="hljs-string">'fancy-progress-bar'</span>
+});</code></pre>
+				<a href="#style-with-glamor" id="style-with-glamor" style="color: inherit; text-decoration: none;">
+					<h4>style with glamor</h4>
+				</a>
+				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { css } <span class="hljs-keyword">from</span> <span class="hljs-string">'glamor'</span>;
+
+toast(<span class="hljs-string">"Custom style"</span>,{
+  <span class="hljs-attr">className</span>: css({
+    <span class="hljs-attr">background</span>: <span class="hljs-string">'black'</span>
+  }),
+  <span class="hljs-attr">bodyClassName</span>: css({
+    <span class="hljs-attr">fontSize</span>: <span class="hljs-string">'60px'</span>
+  }),
+  <span class="hljs-attr">progressClassName</span>: css({
+    <span class="hljs-attr">background</span>: <span class="hljs-string">"repeating-radial-gradient(circle at center, red 0, blue, green 30px)"</span>
+  })
+});</code></pre>
+				<a href="#define-style-globally" id="define-style-globally" style="color: inherit; text-decoration: none;">
+					<h4>Define style globally</h4>
+				</a>
+				<pre><code class="language-js">&lt;ToastContainer
+  className=<span class="hljs-string">'toast-container'</span>
+  toastClassName=<span class="hljs-string">"dark-toast"</span>
+  progressClassName={css({
+    <span class="hljs-attr">height</span>: <span class="hljs-string">"2px"</span>
+  })}
+/&gt;</code></pre>
+				<a href="#right-to-left-support" id="right-to-left-support" style="color: inherit; text-decoration: none;">
+					<h4>Right to left support</h4>
+				</a>
+				<p>Your app need to support rtl content? Set the rtl props to <code>true</code>:</p>
+				<pre><code class="language-javascript">  render(){
+    <span class="hljs-keyword">return</span>(
+      {<span class="hljs-comment">/*Component*/</span>}
+      &lt;ToastContainer rtl /&gt;
+      {<span class="hljs-comment">/*Component*/</span>}
+    );
+  }</code></pre>
+				<a href="#include-the-bare-minimum-style" id="include-the-bare-minimum-style" style="color: inherit; text-decoration: none;">
+					<h4>Include the bare minimum style</h4>
+				</a>
+				<p>To include the bare minimum required style you can do as follow:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> <span class="hljs-string">'react-toastify/dist/ReactToastify.minimal.css'</span>;</code></pre>
+				<a href="#mobile" id="mobile" style="color: inherit; text-decoration: none;">
+					<h3>Mobile</h3>
+				</a>
+				<p>On mobile the toast will take all the available width.</p>
+				<p><img src="https://user-images.githubusercontent.com/5574267/28754040-ae7195ea-753d-11e7-86e1-f23c5e6bc531.gif" alt="react toastiy mobile"></p>
+				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
+					<h2>Api</h2>
+				</a>
+				<a href="#toastcontainer" id="toastcontainer" style="color: inherit; text-decoration: none;">
+					<h3>ToastContainer</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Props</th>
+							<th>Type</th>
+							<th>Default</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>position</td>
+							<td>string</td>
+							<td>top-right</td>
+							<td>One of top-right, top-center, top-left, bottom-right, bottom-center, bottom-left</td>
+						</tr>
+						<tr>
+							<td>autoClose</td>
+							<td>false or number</td>
+							<td>5000</td>
+							<td>Delay in ms to close the toast. If set to false, the notification need to be closed manualy</td>
+						</tr>
+						<tr>
+							<td>closeButton</td>
+							<td>React Element or false</td>
+							<td>-</td>
+							<td>A React Component to replace the default close button or <code>false</code> to hide the button</td>
+						</tr>
+						<tr>
+							<td>transition</td>
+							<td>function</td>
+							<td>-</td>
+							<td>A reference to a valid react-transition-group/Transition component</td>
+						</tr>
+						<tr>
+							<td>hideProgressBar</td>
+							<td>bool</td>
+							<td>false</td>
+							<td>Display or not the progress bar below the toast(remaining time)</td>
+						</tr>
+						<tr>
+							<td>pauseOnHover</td>
+							<td>bool</td>
+							<td>true</td>
+							<td>Keep the timer running or not on hover</td>
+						</tr>
+						<tr>
+							<td>pauseOnFocusLoss</td>
+							<td>bool</td>
+							<td>true</td>
+							<td>Pause the timer when the window loses focus</td>
+						</tr>
+						<tr>
+							<td>rtl</td>
+							<td>bool</td>
+							<td>false</td>
+							<td>Support right to left content</td>
+						</tr>
+						<tr>
+							<td>closeOnClick</td>
+							<td>bool</td>
+							<td>true</td>
+							<td>Dismiss toast on click</td>
+						</tr>
+						<tr>
+							<td>newestOnTop</td>
+							<td>bool</td>
+							<td>false</td>
+							<td>Display newest toast on top</td>
+						</tr>
+						<tr>
+							<td>className</td>
+							<td>string|object</td>
+							<td>-</td>
+							<td>Add optional classes to the container</td>
+						</tr>
+						<tr>
+							<td>style</td>
+							<td>object</td>
+							<td>-</td>
+							<td>Add optional inline style to the container</td>
+						</tr>
+						<tr>
+							<td>toastClassName</td>
+							<td>string|object</td>
+							<td>-</td>
+							<td>Add optional classes to the toast</td>
+						</tr>
+						<tr>
+							<td>bodyClassName</td>
+							<td>string|object</td>
+							<td>-</td>
+							<td>Add optional classes to the toast body</td>
+						</tr>
+						<tr>
+							<td>progressClassName</td>
+							<td>string|object</td>
+							<td>-</td>
+							<td>Add optional classes to the progress bar</td>
+						</tr>
+						<tr>
+							<td>progressStyle</td>
+							<td>object</td>
+							<td>-</td>
+							<td>Add optional inline style to the progress bar</td>
+						</tr>
+						<tr>
+							<td>draggable</td>
+							<td>bool</td>
+							<td>true</td>
+							<td>Allow toast to be draggable</td>
+						</tr>
+						<tr>
+							<td>draggablePercent</td>
+							<td>number</td>
+							<td>80</td>
+							<td>The percentage of the toast&#39;s width it takes for a drag to dismiss a toast(value between 0 and 100)</td>
+						</tr>
+						<tr>
+							<td>enableMultiContainer</td>
+							<td>bool</td>
+							<td>-</td>
+							<td>Enable multi toast container support</td>
+						</tr>
+						<tr>
+							<td>containerId</td>
+							<td>string\number</td>
+							<td>-</td>
+							<td>Container id used to match toast with the same containerId</td>
+						</tr>
+						<tr>
+							<td>role</td>
+							<td>string</td>
+							<td>alert</td>
+							<td>Define the ARIA role for the toasts</td>
+						</tr>
+				</tbody></table>
+				<a href="#toast" id="toast" style="color: inherit; text-decoration: none;">
+					<h3>toast</h3>
+				</a>
+				<p>All the method of toast return a <strong>toastId</strong> except <code>dismiss</code> and <code>isActive</code>.
+				The <strong>toastId</strong> can be used to remove a toast programmatically or to check if the toast is displayed.</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>content</td>
+							<td>string or React Element</td>
+							<td>✓</td>
+							<td>Element that will be displayed</td>
+						</tr>
+						<tr>
+							<td>options</td>
+							<td>object</td>
+							<td>✘</td>
+							<td>Options listed below</td>
+						</tr>
+				</tbody></table>
+				<ul>
+					<li>Available options :<ul>
+							<li><code>type</code>: Kind of notification. One of &quot;default&quot;, &quot;success&quot;, &quot;info&quot;, &quot;warning&quot;, &quot;error&quot;. You can use <code>toast.TYPE.SUCCESS</code> and so on to avoid any typo.</li>
+							<li><code>onOpen</code>: Called inside componentDidMount</li>
+							<li><code>onClose</code>: Called inside componentWillUnmount</li>
+							<li><code>autoClose</code>: same as ToastContainer.</li>
+							<li><code>closeButton</code>: <code>false</code> to disable, a <code>React Component</code> to replace or <code>true</code> to display the default button.</li>
+							<li><code>transition</code>: same as ToastContainer.</li>
+							<li><code>closeOnClick</code>: same as ToastContainer.</li>
+							<li><code>hideProgressBar</code>: same as ToastContainer.</li>
+							<li><code>position</code>: same as ToastContainer</li>
+							<li><code>pauseOnHover</code>: same as ToastContainer</li>
+							<li><code>pauseOnFocusLoss</code>: same as ToastContainer</li>
+							<li><code>className</code>: same as ToastContainer toastClassName</li>
+							<li><code>bodyClassName</code>: same as ToastContainer</li>
+							<li><code>progressClassName</code>: same as ToastContainer</li>
+							<li><code>draggable</code>: same as ToastContainer</li>
+							<li><code>draggablePercent</code>: same as ToastContainer</li>
+							<li><code>role</code>: same as ToastContainer</li>
+							<li><code>toastId</code>: optional integer or string to manually set a toastId. If an invalid type is provided a generated toastId will be used</li>
+							<li><code>progress</code>: a value between 0..1 to control the progress bar </li>
+							<li><code>render</code>: string or React Element, only available when calling update</li>
+							<li><code>delay</code>: a number to let you delay the toast appearance</li>
+							<li><code>containerId</code>:  string or number to match a specific Toast container</li>
+							<li><code>onClick</code>:  Called when click inside Toast notification</li>
+						</ul>
+					</li>
+				</ul>
+				<p>:warning:️ <em>Toast options supersede ToastContainer props</em> :warning:</p>
+				<p>:warning:️ <em>Manually setting a toastId overwrite automatically generated toastIds</em> :warning:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> Img = <span class="hljs-function">(<span class="hljs-params">{ src }</span>) =&gt;</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">width</span>=<span class="hljs-string">{48}</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{src}</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+<span class="hljs-keyword">const</span> options = {
+    <span class="hljs-attr">onOpen</span>: <span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(props.foo),
+    <span class="hljs-attr">onClose</span>: <span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(props.foo),
+    <span class="hljs-attr">autoClose</span>: <span class="hljs-number">6000</span>,
+    <span class="hljs-attr">closeButton</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">FontAwesomeCloseButton</span> /&gt;</span></span>,
+    <span class="hljs-attr">type</span>: toast.TYPE.INFO,
+    <span class="hljs-attr">hideProgressBar</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">position</span>: toast.POSITION.TOP_LEFT,
+    <span class="hljs-attr">pauseOnHover</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">transition</span>: MyCustomTransition,
+    <span class="hljs-attr">progress</span>: <span class="hljs-number">0.2</span>
+    <span class="hljs-comment">// and so on ...</span>
+};
+
+<span class="hljs-keyword">const</span> toastId = toast(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Img</span> <span class="hljs-attr">foo</span>=<span class="hljs-string">{bar}/</span>&gt;</span></span>, options) <span class="hljs-comment">// default, type: 'default'</span>
+toast(<span class="hljs-function">(<span class="hljs-params">{ closeToast }</span>) =&gt;</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Render props like<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>, options);
+toast.success(<span class="hljs-string">"Hello"</span>, options) <span class="hljs-comment">// add type: 'success' to options</span>
+toast.info(<span class="hljs-string">"World"</span>, options) <span class="hljs-comment">// add type: 'info' to options</span>
+toast.warn(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Img</span> /&gt;</span></span>, options) <span class="hljs-comment">// add type: 'warning' to options</span>
+toast.error(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Img</span> /&gt;</span></span>, options) <span class="hljs-comment">// add type: 'error' to options</span>
+toast.dismiss() <span class="hljs-comment">// Remove all toasts !</span>
+toast.dismiss(toastId) <span class="hljs-comment">// Remove given toast</span>
+toast.isActive(toastId) <span class="hljs-comment">//Check if a toast is displayed or not</span>
+toast.update(toastId, {
+  <span class="hljs-attr">type</span>: toast.TYPE.INFO,
+  <span class="hljs-attr">render</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Img</span> <span class="hljs-attr">foo</span>=<span class="hljs-string">{bar}/</span>&gt;</span></span>
+});
+toast.done(toastId) <span class="hljs-comment">// completes the controlled progress bar</span>
+toast.configure({
+  <span class="hljs-attr">autoClose</span>: <span class="hljs-number">8000</span>,
+  <span class="hljs-attr">draggable</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-comment">//same as ToastContainer props</span>
+})
+toast.useLazyContainer(<span class="hljs-literal">false</span>) <span class="hljs-comment">// disable lazy container</span></code></pre>
+				<a href="#csstransition" id="csstransition" style="color: inherit; text-decoration: none;">
+					<h3>cssTransition</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>enter</td>
+							<td>string</td>
+							<td>✓</td>
+							<td>-</td>
+							<td>The class name that will be used when the toast enter</td>
+						</tr>
+						<tr>
+							<td>exit</td>
+							<td>string</td>
+							<td>✓</td>
+							<td>-</td>
+							<td>The class name that will be used when the toast exit</td>
+						</tr>
+						<tr>
+							<td>duration</td>
+							<td>number| Array<number></td>
+							<td>✘</td>
+							<td>750</td>
+							<td>The transition duration in ms.</td>
+						</tr>
+						<tr>
+							<td>appendPosition</td>
+							<td>bool</td>
+							<td>✘</td>
+							<td>false</td>
+							<td>Append or not the position  to the class name: <code>yourClassName--top-right</code>, <code>yourClassName--bottom-left</code>...</td>
+						</tr>
+				</tbody></table>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> { cssTransition } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-toastify'</span>;
+
+<span class="hljs-keyword">const</span> Zoom = cssTransition({
+  <span class="hljs-attr">enter</span>: <span class="hljs-string">'zoomIn'</span>,
+  <span class="hljs-attr">exit</span>: <span class="hljs-string">'zoomOut'</span>,
+  <span class="hljs-attr">duration</span>: <span class="hljs-number">750</span>,
+  <span class="hljs-attr">appendPosition</span>: <span class="hljs-literal">false</span>
+});
+
+<span class="hljs-keyword">const</span> Zoom = cssTransition({
+  <span class="hljs-attr">enter</span>: <span class="hljs-string">'zoomIn'</span>,
+  <span class="hljs-attr">exit</span>: <span class="hljs-string">'zoomOut'</span>,
+  <span class="hljs-attr">duration</span>: [<span class="hljs-number">500</span>, <span class="hljs-number">600</span>],
+  <span class="hljs-attr">appendPosition</span>: <span class="hljs-literal">false</span>
+});</code></pre>
+				<a href="#browser-support" id="browser-support" style="color: inherit; text-decoration: none;">
+					<h2>Browser Support</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th><img src="https://cloud.githubusercontent.com/assets/398893/3528325/20373e76-078e-11e4-8e3a-1cb86cf506f0.png" alt="IE"></th>
+							<th><img src="https://cloud.githubusercontent.com/assets/398893/3528328/23bc7bc4-078e-11e4-8752-ba2809bf5cce.png" alt="Chrome"></th>
+							<th><img src="https://cloud.githubusercontent.com/assets/398893/3528329/26283ab0-078e-11e4-84d4-db2cf1009953.png" alt="Firefox"></th>
+							<th><img src="https://cloud.githubusercontent.com/assets/398893/3528330/27ec9fa8-078e-11e4-95cb-709fd11dac16.png" alt="Opera"></th>
+							<th><img src="https://cloud.githubusercontent.com/assets/398893/3528331/29df8618-078e-11e4-8e3e-ed8ac738693f.png" alt="Safari"></th>
+							<th><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="Edge"></th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>IE 11+ ✔</td>
+							<td>Latest ✔</td>
+							<td>Latest ✔</td>
+							<td>Latest ✔</td>
+							<td>Latest ✔</td>
+							<td>Latest ✔</td>
+						</tr>
+				</tbody></table>
+				<a href="#release-notes" id="release-notes" style="color: inherit; text-decoration: none;">
+					<h2>Release Notes</h2>
+				</a>
+				<p>You can find the release note for the latest release <a href="https://github.com/fkhadra/react-toastify/releases/latest">here</a></p>
+				<p>You can browse them all <a href="https://github.com/fkhadra/react-toastify/releases">here</a></p>
+				<a href="#contribute" id="contribute" style="color: inherit; text-decoration: none;">
+					<h2>Contribute</h2>
+				</a>
+				<p>Show your ❤️ and support by giving a ⭐. Any suggestions are welcome ! Take a look at the contributing guide.</p>
+				<p>You can also find me on <a href="https://www.reactiflux.com/">reactiflux</a>. My pseudo is Fadi.</p>
+				<a href="#contributors" id="contributors" style="color: inherit; text-decoration: none;">
+					<h2>Contributors</h2>
+				</a>
+				<a href="#code-contributors" id="code-contributors" style="color: inherit; text-decoration: none;">
+					<h3>Code Contributors</h3>
+				</a>
+				<p>This project exists thanks to all the people who contribute. [<a href="CONTRIBUTING.md">Contribute</a>].
+				<a href="https://github.com/fkhadra/react-toastify/graphs/contributors"><img src="https://opencollective.com/react-toastify/contributors.svg?width=890&button=false" /></a></p>
+				<a href="#financial-contributors" id="financial-contributors" style="color: inherit; text-decoration: none;">
+					<h3>Financial Contributors</h3>
+				</a>
+				<p>Become a financial contributor and help us sustain our community. [<a href="https://opencollective.com/react-toastify/contribute">Contribute</a>]</p>
+				<a href="#individuals" id="individuals" style="color: inherit; text-decoration: none;">
+					<h4>Individuals</h4>
+				</a>
+				<p><a href="https://opencollective.com/react-toastify"><img src="https://opencollective.com/react-toastify/individuals.svg?width=890"></a></p>
+				<a href="#organizations" id="organizations" style="color: inherit; text-decoration: none;">
+					<h4>Organizations</h4>
+				</a>
+				<p>Support this project with your organization. Your logo will show up here with a link to your website. [<a href="https://opencollective.com/react-toastify/contribute">Contribute</a>]</p>
+				<p><a href="https://opencollective.com/react-toastify/organization/0/website"><img src="https://opencollective.com/react-toastify/organization/0/avatar.svg"></a>
+					<a href="https://opencollective.com/react-toastify/organization/1/website"><img src="https://opencollective.com/react-toastify/organization/1/avatar.svg"></a>
+					<a href="https://opencollective.com/react-toastify/organization/2/website"><img src="https://opencollective.com/react-toastify/organization/2/avatar.svg"></a>
+					<a href="https://opencollective.com/react-toastify/organization/3/website"><img src="https://opencollective.com/react-toastify/organization/3/avatar.svg"></a>
+					<a href="https://opencollective.com/react-toastify/organization/4/website"><img src="https://opencollective.com/react-toastify/organization/4/avatar.svg"></a>
+					<a href="https://opencollective.com/react-toastify/organization/5/website"><img src="https://opencollective.com/react-toastify/organization/5/avatar.svg"></a>
+					<a href="https://opencollective.com/react-toastify/organization/6/website"><img src="https://opencollective.com/react-toastify/organization/6/avatar.svg"></a>
+					<a href="https://opencollective.com/react-toastify/organization/7/website"><img src="https://opencollective.com/react-toastify/organization/7/avatar.svg"></a>
+					<a href="https://opencollective.com/react-toastify/organization/8/website"><img src="https://opencollective.com/react-toastify/organization/8/avatar.svg"></a>
+				<a href="https://opencollective.com/react-toastify/organization/9/website"><img src="https://opencollective.com/react-toastify/organization/9/avatar.svg"></a></p>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p>Licensed under MIT</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/___tests___components_closebutton_.html">&quot;__tests__/components/<wbr>Close<wbr>Button&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/___tests___components_progressbar_.html">&quot;__tests__/components/<wbr>Progress<wbr>Bar&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/___tests___components_toast_.html">&quot;__tests__/components/<wbr>Toast&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/___tests___components_toastcontainer_.html">&quot;__tests__/components/<wbr>Toast<wbr>Container&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/___tests___toast_.html">&quot;__tests__/toast&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/___tests___utils_csstransition_.html">&quot;__tests__/utils/css<wbr>Transition&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/___tests___utils_eventmanager_.html">&quot;__tests__/utils/event<wbr>Manager&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/___tests___utils_propvalidator_.html">&quot;__tests__/utils/prop<wbr>Validator&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_components_closebutton_.html">&quot;components/<wbr>Close<wbr>Button&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_components_progressbar_.html">&quot;components/<wbr>Progress<wbr>Bar&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_components_toast_.html">&quot;components/<wbr>Toast&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_components_toastcontainer_.html">&quot;components/<wbr>Toast<wbr>Container&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_components_transitions_.html">&quot;components/<wbr>Transitions&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_index_.html">&quot;index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_toast_.html">&quot;toast&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_constant_.html">&quot;utils/constant&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_csstransition_.html">&quot;utils/css<wbr>Transition&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_eventmanager_.html">&quot;utils/event<wbr>Manager&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_index_.html">&quot;utils/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_propvalidator_.html">&quot;utils/prop<wbr>Validator&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

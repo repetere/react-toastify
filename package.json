@@ -1,5 +1,5 @@
 {
-  "name": "react-toastify",
+  "name": "@repetere/react-toastify",
   "version": "5.5.0",
   "description": "React notification made easy",
   "keywords": [
@@ -11,8 +11,13 @@
     "push",
     "alert"
   ],
-  "main": "index.js",
-  "module": "esm/react-toastify.js",
+  "main": "dist/index.cjs.js",
+  "module": "build/index.js",
+  "esm": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
+  "web": "dist/index.web.js",
+  "modules.root": "build",
+  "type": "module",
   "sideEffects": [
     "*.css"
   ],
@@ -26,20 +31,13 @@
     "index.d.ts"
   ],
   "scripts": {
-    "start": "npm run sass && webpack-dev-server --config ./webpack.config.dev.js",
-    "test": "jest",
-    "test:coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "lint": "eslint src/",
-    "lint:fix": "eslint --fix src/",
-    "prettier-all": "prettier --single-quote --write 'src/**/*.js'",
-    "prebuild": "yarn run test",
-    "build": "npm run clean && cross-env NODE_ENV=production rollup -c && npm run style",
-    "clean": "rimraf cjs/* && rimraf dist/* && rimraf esm/*",
-    "sass": "node-sass scss/main.scss dist/ReactToastify.css",
-    "sass-minimal": "node-sass scss/minimal.scss dist/ReactToastify.minimal.css",
-    "postsass": "postcss dist/ReactToastify.css --use autoprefixer -m -o dist/ReactToastify.css",
-    "postsass-minimal": "cssnano dist/ReactToastify.minimal.css dist/ReactToastify.minimal.css --no-zindex --no-reduceIdents",
-    "style": "npm run sass && npm run sass-minimal && cssnano dist/ReactToastify.css dist/ReactToastify.min.css --no-zindex --no-reduceIdents"
+    "dev": "rollup -c -w",
+    "benchmark": "node -r esm  benchmark/main_bmrk.js",
+    "test": "jest --coverage",
+    "doc": "tsc && typedoc && sitedown manual/ -b docs/manual",
+    "compile": "tsc",
+    "build": "tsc && rollup -c && typedoc && sitedown manual/ -b docs/manual",
+    "coverage": "coveralls"
   },
   "repository": {
     "type": "git",
@@ -52,17 +50,18 @@
   },
   "homepage": "https://github.com/fkhadra/react-toastify#readme",
   "dependencies": {
-    "@babel/runtime": "^7.4.2",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
     "react-transition-group": "^4"
   },
   "jest": {
     "verbose": true,
-    "setupFiles": [
-      "raf/polyfill",
-      "<rootDir>/setupTests.js"
-    ]
+    "preset": "ts-jest",
+    "globals": {
+      "ts-jest": {
+        "diagnostics": false
+      }
+    }
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -72,20 +71,33 @@
     "@babel/plugin-transform-runtime": "^7.4.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@types/react": "^16.4.12",
+    "@rollup/plugin-alias": "^3.0.1",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@rollup/plugin-replace": "^2.3.1",
+    "@rollup/plugin-sucrase": "^3.0.0",
+    "@rollup/plugin-typescript": "^3.1.1",
+    "@types/chai": "^4.2.11",
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^25.1.4",
+    "@types/react": "^16.9.31",
+    "@types/react-dom": "^16.9.6",
     "@types/react-transition-group": "^2.0.13",
+    "@types/sinon": "^9.0.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "chai": "^4.2.0",
     "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "cssnano": "^4.1.10",
     "cssnano-cli": "^1.0.5",
-    "enzyme": "^3.5.0",
-    "enzyme-adapter-react-16": "^1.3.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.3.4",
     "eslint": "^5.4.0",
     "eslint-config-react-app": "^2.1.0",
@@ -94,32 +106,39 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
     "html-webpack-plugin": "^3.2.0",
-    "jest": "^24.8.0",
+    "install": "^0.13.0",
+    "jest": "^25.2.6",
     "jest-cli": "^24.8.0",
     "node-sass": "^4.9.3",
+    "npm": "^6.14.4",
     "postcss": "^7.0.17",
     "postcss-cli": "^6.1.2",
     "prettier": "^1.14.2",
     "raf": "^3.4.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-test-renderer": "^16.4.2",
     "regenerator-runtime": "^0.12.1",
     "rimraf": "^2.6.2",
-    "rollup": "^1.7.1",
+    "rollup": "^2.3.2",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-size-snapshot": "^0.8.0",
+    "rollup-plugin-terser-js": "^1.0.2",
     "rollup-plugin-uglify": "^6.0.2",
     "sass-loader": "^7.1.0",
+    "sinon": "^9.0.1",
     "style-loader": "^0.23.0",
+    "ts-jest": "^25.3.0",
+    "tslib": "^1.11.1",
+    "typedoc": "^0.17.3",
+    "typescript": "^3.8.3",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.7"
   },
-  "peerDependencies": {
-    "react": ">=15.0.0",
-    "react-dom": ">=15.0.0"
-  }
+  "peerDependencies": {}
 }
