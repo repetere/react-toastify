@@ -126,6 +126,7 @@
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-scss": "^2.1.0",
     "rollup-plugin-size-snapshot": "^0.8.0",
     "rollup-plugin-terser-js": "^1.0.2",
     "rollup-plugin-uglify": "^6.0.2",

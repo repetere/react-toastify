@@ -6,6 +6,7 @@ import globals from 'rollup-plugin-node-globals';
 import replace from '@rollup/plugin-replace';
 import terser from 'rollup-plugin-terser-js';
 import sucrase from '@rollup/plugin-sucrase';
+import scss from 'rollup-plugin-scss';
 import pkg from "./package.json";
 
 const name = 'ReactToastify';
@@ -140,6 +141,22 @@ function getPlugins({
 
 
 export default [
+  {
+    input: "scss/main.ts",
+    plugins: [
+      scss({
+        output:'dist/reacttoastify.css'
+      }),
+    ],
+  },
+  {
+    input: "scss/min.ts",
+    plugins: [
+      scss({
+        output:'dist/reacttoastify.min.css'
+      }),
+    ],
+  },
   {
     input: "src/index.js",
     output: getOutput({
